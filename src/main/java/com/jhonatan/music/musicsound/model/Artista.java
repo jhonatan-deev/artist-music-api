@@ -16,4 +16,9 @@ public class Artista {
     private TipoArtista tipo;
     @OneToMany(mappedBy = "artista")
     private List<Musica> musicas = new ArrayList<>();
+    public Artista() {}// a jpa exige que tenha em construtor padrao desse ou vai gerar esse erro: No default constructor for entity 'com.example.screenmatch.model.Serie'
+    public Artista(String nomeArtista, TipoArtista tipo) {
+        this.nomeArtista = nomeArtista;
+        this.tipo = tipo;
+    }
 }
