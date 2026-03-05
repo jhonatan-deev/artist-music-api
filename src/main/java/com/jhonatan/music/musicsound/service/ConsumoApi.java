@@ -11,7 +11,9 @@ import java.net.http.HttpResponse;
 @Service
 public class ConsumoApi {
     public String obterDados(String endereco){
-        HttpClient httpClient = HttpClient.newHttpClient();
+        HttpClient httpClient = HttpClient.newBuilder()
+                .followRedirects(HttpClient.Redirect.ALWAYS)
+                .build();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(endereco))
                 .build();

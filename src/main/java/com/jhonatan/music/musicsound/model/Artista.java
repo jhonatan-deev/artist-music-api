@@ -21,4 +21,12 @@ public class Artista {
         this.nomeArtista = nomeArtista;
         this.tipo = tipo;
     }
+    @Override
+    public String toString() {
+        return String.format(
+                "ID: %d | Nome: %s | Tipo: %s",
+                id, nomeArtista, tipo
+        );
+    }
+
 }
